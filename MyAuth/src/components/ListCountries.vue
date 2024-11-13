@@ -61,10 +61,7 @@ export default {
                     <tr v-for="country in _LISTCOUNTRIES" :key="country.id">
                         <td>{{country.name}}</td>
                         <td>{{country.description}}</td>
-                        <td>
-                            <i class="fa-solid fa-trash" @click="delCountry(country.id)"></i>
-                            <i class="fa-solid fa-pen"></i>
-                        </td>
+                        <td><i class="fa-solid fa-trash" @click="delCountry(country.id)"></i></td>
                     </tr>
                 </tbody>
             </table>
