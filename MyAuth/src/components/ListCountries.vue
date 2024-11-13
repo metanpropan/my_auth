@@ -16,7 +16,11 @@ export default {
             })  
         };
         let delCountry = (id) => { // функция удаления информации по стране
-            _LISTCOUNTRIES.value.splice(id,1)
+            var result = confirm('Вы действительно хотите удалить описание?');
+            if (result) {
+                _LISTCOUNTRIES.value.splice(id,1)
+            }
+            
         }
     return {
         addCountry,
@@ -57,7 +61,10 @@ export default {
                     <tr v-for="country in _LISTCOUNTRIES" :key="country.id">
                         <td>{{country.name}}</td>
                         <td>{{country.description}}</td>
-                        <td><i class="fa-solid fa-trash" @click="delCountry(country.id)"></i></td>
+                        <td>
+                            <i class="fa-solid fa-trash" @click="delCountry(country.id)"></i>
+                            <i class="fa-solid fa-pen"></i>
+                        </td>
                     </tr>
                 </tbody>
             </table>
