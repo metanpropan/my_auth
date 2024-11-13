@@ -7,20 +7,20 @@ export default {
         const _NAMECOUNTRY = ref(""), //название страны
               _DESCRIPTIONCOUNTRY = ref("") ; //описание страны
 
-        const _LISTCOUNTRIES = ref([]); // объект для хранения информации по странам
-
+        let _LISTCOUNTRIES = ref([]); // объект для хранения информации по странам
+        let i ='';
         let addCountry = (name,description) => { // функция добавления информации по стране
             _LISTCOUNTRIES.value.push({
+                id: i++,
                 name: name,
                 description: description,
-            })  
+            })
         };
         let delCountry = (id) => { // функция удаления информации по стране
             var result = confirm('Вы действительно хотите удалить описание?');
             if (result) {
-                _LISTCOUNTRIES.value.splice(id,1)
-            }
-            
+                _LISTCOUNTRIES.value.splice(_LISTCOUNTRIES.value.findIndex(item => item.id == id),1)
+            }  
         }
     return {
         addCountry,
