@@ -5,7 +5,7 @@ import ListCountries from './components/ListCountries.vue'
 
 <template>
 <!-- пока меняю рабочие компоннеты здесь, дабы router еще не реализован -->
-  <ListCountries /> 
+<router-view />
 </template>
 
 <style scoped>
