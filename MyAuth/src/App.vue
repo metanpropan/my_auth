@@ -1,6 +1,6 @@
 <script setup>
 import Authorization from './components/Authorization.vue'
-import ListCountries from './components/ListCountries.vue'
+import ListCountries from './components/CountriesPage.vue'
 </script>
 
 <template>
